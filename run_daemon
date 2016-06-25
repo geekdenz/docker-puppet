@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo docker run -dit -p 5432:5432 -p 80:80 -d denz/postgis
