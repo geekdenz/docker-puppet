@@ -1,0 +1,2 @@
+#!/bin/bash
+docker exec -i -t $1 /usr/bin/puppet apply /var/www/portals.pp

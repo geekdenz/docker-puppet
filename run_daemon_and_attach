@@ -1,0 +1,3 @@
+#!/bin/bash
+ID=`docker run -dit -p 5432:5432 -p 80:80 -d denz/puppet-provision`
+docker exec -i -t $ID /bin/bash
