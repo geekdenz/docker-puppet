@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo docker build -t denz/puppet-provision .
+docker build -t denz/puppet-provision .

@@ -1,0 +1,19 @@
+# puppet forge repos  
+mod 'puppetlabs/stdlib',     '4.5.1'
+mod 'puppetlabs/concat',     '1.2.4'
+mod 'puppetlabs/apache',     '1.4.0'
+#mod 'puppetlabs/postgresql', '4.3.0'
+mod 'puppetlabs/apt',        '1.8.0'
+mod 'maestrodev/wget',       '1.7.0'
+mod 'saz/locales',           '2.2.1'
+mod 'puppetlabs/vcsrepo',    '1.3.0'
+#mod 'Aethylred/postfix',     '0.2.2'
+mod 'mayflower/php',         '3.4.2'
+mod 'puppetlabs/inifile',    '1.4.1'
+mod 'darin/zypprepo',        '1.0.2'
+mod 'puppetlabs/mysql',      '3.7.0'
+#mod 'akandels/phpunit',     '1.0.0'
+#mod 'nodes/php', '0.9.0'
+
+# timezone
+mod 'bashtoni/timezone', '1.0.0'

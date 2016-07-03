@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -i -t $1 /usr/bin/puppet apply /var/www/portals.pp
+docker exec -i -t $1 /usr/bin/puppet apply --modulepath=/opt/puppet/modules /opt/puppet/manifests/silverstripe.pp

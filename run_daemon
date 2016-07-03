@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo docker run -dit -p 5432:5432 -p 80:80 -d denz/puppet-provision
+docker run -dit -p 5432:5432 -p 80:80 -v $(pwd)/puppet:/opt/puppet -v $(pwd)/project:/opt/silverstripe/project -d denz/puppet-provision

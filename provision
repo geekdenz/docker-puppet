@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker exec -i -t $1 /bin/bash -c 'PUPPETFILE=/opt/puppet/Puppetfile PUPPETFILE_DIR=/opt/puppet/modules /usr/local/bin/r10k --verbose 3 puppetfile install'
+docker exec -i -t $1 /usr/bin/puppet apply --modulepath=/opt/puppet/modules /opt/puppet/manifests/silverstripe.pp

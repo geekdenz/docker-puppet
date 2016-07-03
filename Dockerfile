@@ -2,10 +2,16 @@ FROM ubuntu:trusty
 MAINTAINER Tim-Hinnerk Heuer <th.heuer@gmail.com>
 
 # Install packages
+COPY sources.list /etc/apt/sources.list
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install wget
 RUN DEBIAN_FRONTEND=noninteractive wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb -O /tmp/puppetlabs-release-pc1-trusty.deb
 RUN DEBIAN_FRONTEND=noninteractive dpkg -i /tmp/puppetlabs-release-pc1-trusty.deb
+#RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ quantal multiverse\n\
+#deb-src http://us.archive.ubuntu.com/ubuntu/ quantal multiverse\n\
+#deb http://us.archive.ubuntu.com/ubuntu/ quantal-updates multiverse\n\
+#deb-src http://us.archive.ubuntu.com/ubuntu/ quantal-updates multiverse' >> /etc/apt/sources.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
 RUN apt-get update
 #RUN DEBIAN_FRONTEND=noninteractive apt-get -y install postgresql-9.3-postgis-2.1 puppet-agent
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install puppet

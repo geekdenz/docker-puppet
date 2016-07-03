@@ -1,0 +1,458 @@
+[mNotice: Scope(Class[main]): === PHP 5 - SilverStripe ===[0m
+[1;31mWarning: Config file /etc/puppet/hiera.yaml not found, using Hiera defaults[0m
+^Zbg
+[mNotice: Compiled catalog for a284d6e99597.landcareresearch.co.nz in environment production in 3.34 seconds[0m
+[1;31mError: Execution of '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install libapache2-mod-fastcgi' returned 100: Reading package lists...
+Building dependency tree...
+Reading state information...
+Package libapache2-mod-fastcgi is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'libapache2-mod-fastcgi' has no installation candidate
+[0m
+[1;31mError: /Stage[main]/Apache::Mod::Fastcgi/Apache::Mod[fastcgi]/Package[libapache2-mod-fastcgi]/ensure: change from purged to present failed: Execution of '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install libapache2-mod-fastcgi' returned 100: Reading package lists...
+Building dependency tree...
+Reading state information...
+Package libapache2-mod-fastcgi is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'libapache2-mod-fastcgi' has no installation candidate
+[0m
+[mNotice: /Stage[main]/Apache::Mod::Fastcgi/File[fastcgi.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache::Mod::Fastcgi/File[fastcgi.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache::Mod::Fastcgi/Apache::Mod[fastcgi]/File[fastcgi.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache::Mod::Fastcgi/Apache::Mod[fastcgi]/File[fastcgi.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache::Mod::Fastcgi/Apache::Mod[fastcgi]/File[fastcgi.load symlink]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache::Mod::Fastcgi/Apache::Mod[fastcgi]/File[fastcgi.load symlink]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache::Mod::Fastcgi/Apache::Mod[fastcgi]/File[fastcgi.conf symlink]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache::Mod::Fastcgi/Apache::Mod[fastcgi]/File[fastcgi.conf symlink]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Fastcgi::Server[php]/File[fastcgi-pool-php.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Fastcgi::Server[php]/File[fastcgi-pool-php.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/conf.d]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/conf.d]: Skipping because of failed dependencies[0m
+[1;31mError: /Stage[main]/Mysql::Server::Service/Service[mysqld]: Could not evaluate: undefined method `[]' for nil:NilClass[0m
+[mNotice: /Stage[main]/Mysql::Server::Service/Exec[wait_for_mysql_socket_to_open]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Mysql::Server::Service/Exec[wait_for_mysql_socket_to_open]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Mysql::Server::Root_password/Exec[remove install pass]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Mysql::Server::Root_password/Exec[remove install pass]: Skipping because of failed dependencies[0m
+[1;31mError: Could not prefetch mysql_user provider 'mysql': Execution of '/usr/bin/mysql -NBe SELECT CONCAT(User, '@',Host) AS User FROM mysql.user' returned 1: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+[0m
+[mNotice: /Stage[main]/Main/Mysql::Db[mydb]/Mysql_user[test@localhost]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Mysql::Db[mydb]/Mysql_user[test@localhost]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Mysql::Db[mydb]/Anchor[mysql::db_mydb::begin]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Mysql::Db[mydb]/Anchor[mysql::db_mydb::begin]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Mysql::Client/Anchor[mysql::client::start]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Mysql::Client/Anchor[mysql::client::start]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Mysql::Client::Install/Package[mysql_client]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Mysql::Client::Install/Package[mysql_client]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Mysql::Client/Anchor[mysql::client::end]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Mysql::Client/Anchor[mysql::client::end]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Mysql::Db[mydb]/Anchor[mysql::db_mydb::end]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Mysql::Db[mydb]/Anchor[mysql::db_mydb::end]: Skipping because of failed dependencies[0m
+[1;31mError: Could not prefetch mysql_database provider 'mysql': Execution of '/usr/bin/mysql -NBe show databases' returned 1: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+[0m
+[mNotice: /Stage[main]/Main/Mysql::Db[mydb]/Mysql_database[mydb]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Mysql::Db[mydb]/Mysql_database[mydb]: Skipping because of failed dependencies[0m
+[1;31mError: Could not prefetch mysql_grant provider 'mysql': Execution of '/usr/bin/mysql -NBe SELECT CONCAT(User, '@',Host) AS User FROM mysql.user' returned 1: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+[0m
+[mNotice: /Stage[main]/Main/Mysql::Db[mydb]/Mysql_grant[test@localhost/mydb.*]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Mysql::Db[mydb]/Mysql_grant[test@localhost/mydb.*]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Mysql::Server/Anchor[mysql::server::end]: Dependency Service[mysqld] has failures: true[0m
+[1;31mWarning: /Stage[main]/Mysql::Server/Anchor[mysql::server::end]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/buffer.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/buffer.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authnz_ldap.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authnz_ldap.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_byrequests.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_byrequests.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authz_owner.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authz_owner.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/heartbeat.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/heartbeat.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_worker.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_worker.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/dav_lock.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/dav_lock.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/usertrack.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/usertrack.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/request.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/request.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/ldap.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/ldap.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/session.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/session.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/ldap.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/ldap.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/remoteip.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/remoteip.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/userdir.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/userdir.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_socache.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_socache.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_ftp.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_ftp.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/xml2enc.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/xml2enc.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/status.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/status.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_balancer.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_balancer.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/info.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/info.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/file_cache.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/file_cache.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authz_dbd.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authz_dbd.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_event.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_event.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/expires.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/expires.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_ftp.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_ftp.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_event.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_event.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_express.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_express.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/asis.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/asis.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/vhost_alias.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/vhost_alias.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache_socache.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache_socache.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/ssl.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/ssl.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/session_dbd.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/session_dbd.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_bybusyness.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_bybusyness.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_fcgi.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_fcgi.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/unique_id.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/unique_id.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_http.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_http.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/heartmonitor.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/heartmonitor.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_dbd.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_dbd.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_balancer.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_balancer.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authz_dbm.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authz_dbm.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_anon.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_anon.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/actions.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/actions.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/ext_filter.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/ext_filter.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/socache_shmcb.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/socache_shmcb.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/slotmem_plain.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/slotmem_plain.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/substitute.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/substitute.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_bytraffic.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_bytraffic.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_html.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_html.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_dbm.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/authn_dbm.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/data.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/data.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/lua.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/lua.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/dbd.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/dbd.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache_disk.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache_disk.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/headers.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/headers.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_ajp.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_ajp.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache_disk.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache_disk.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_worker.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_worker.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/dialup.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/dialup.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_connect.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_connect.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/socache_dbm.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/socache_dbm.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/socache_memcache.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/socache_memcache.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/speling.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/speling.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_scgi.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_scgi.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/session_crypto.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/session_crypto.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_prefork.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_prefork.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mime_magic.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mime_magic.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/echo.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/echo.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/sed.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/sed.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/session_cookie.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/session_cookie.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/auth_form.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/auth_form.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/ssl.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/ssl.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_wstunnel.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_wstunnel.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/include.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/include.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/reflector.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/reflector.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mime_magic.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mime_magic.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/charset_lite.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/charset_lite.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_fdpass.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/proxy_fdpass.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/dump_io.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/dump_io.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_heartbeat.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/lbmethod_heartbeat.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/auth_digest.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/auth_digest.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/cgi.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/cgi.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/userdir.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/userdir.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_prefork.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/mpm_prefork.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/suexec.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/suexec.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/allowmethods.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/allowmethods.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/macro.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/macro.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/status.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/status.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/cache.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/slotmem_shm.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/slotmem_shm.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/info.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/info.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/ratelimit.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/ratelimit.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/log_forensic.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/log_forensic.load]: Skipping because of failed dependencies[0m
+[1;31mError: Could not update: Execution of '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install php5-common' returned 100: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  lsof
+Suggested packages:
+  php5-user-cache
+The following NEW packages will be installed:
+  lsof php5-common
+0 upgraded, 2 newly installed, 0 to remove and 4 not upgraded.
+Need to get 939 kB of archives.
+After this operation, 1632 kB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  php5-common
+E: There are problems and -y was used without --force-yes
+[0m
+[1;31mError: /Stage[main]/Php::Packages/Package[php5-common]/ensure: change from purged to latest failed: Could not update: Execution of '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install php5-common' returned 100: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  lsof
+Suggested packages:
+  php5-user-cache
+The following NEW packages will be installed:
+  lsof php5-common
+0 upgraded, 2 newly installed, 0 to remove and 4 not upgraded.
+Need to get 939 kB of archives.
+After this operation, 1632 kB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  php5-common
+E: There are problems and -y was used without --force-yes
+[0m
+[1;31mError: Could not update: Execution of '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install php5-cli' returned 100: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libedit2 libonig2 libqdbm14 libssl1.0.2 lsof php5-common php5-json
+  php5-readline
+Suggested packages:
+  php-pear php5-user-cache
+The following NEW packages will be installed:
+  libedit2 libonig2 libqdbm14 libssl1.0.2 lsof php5-cli php5-common php5-json
+  php5-readline
+0 upgraded, 9 newly installed, 0 to remove and 4 not upgraded.
+Need to get 4649 kB of archives.
+After this operation, 15.3 MB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  libssl1.0.2 libedit2 php5-common php5-json php5-cli php5-readline
+E: There are problems and -y was used without --force-yes
+[0m
+[1;31mError: /Stage[main]/Php::Packages/Package[php5-cli]/ensure: change from purged to latest failed: Could not update: Execution of '/usr/bin/apt-get -q -y -o DPkg::Options::=--force-confold install php5-cli' returned 100: Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libedit2 libonig2 libqdbm14 libssl1.0.2 lsof php5-common php5-json
+  php5-readline
+Suggested packages:
+  php-pear php5-user-cache
+The following NEW packages will be installed:
+  libedit2 libonig2 libqdbm14 libssl1.0.2 lsof php5-cli php5-common php5-json
+  php5-readline
+0 upgraded, 9 newly installed, 0 to remove and 4 not upgraded.
+Need to get 4649 kB of archives.
+After this operation, 15.3 MB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  libssl1.0.2 libedit2 php5-common php5-json php5-cli php5-readline
+E: There are problems and -y was used without --force-yes
+[0m
+[mNotice: /Stage[main]/Php::Fpm/Package[php5-fpm]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm/Package[php5-fpm]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm/Package[php5-fpm]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Fpm::Config/File[/etc/php5/fpm/pool.d]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm::Config/File[/etc/php5/fpm/pool.d]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm::Config/File[/etc/php5/fpm/pool.d]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Fpm/Php::Fpm::Pool[www]/File[/etc/php5/fpm/pool.d/www.conf]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm/Php::Fpm::Pool[www]/File[/etc/php5/fpm/pool.d/www.conf]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm/Php::Fpm::Pool[www]/File[/etc/php5/fpm/pool.d/www.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Fpm::Config/File[/etc/php5/fpm/php-fpm.conf]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm::Config/File[/etc/php5/fpm/php-fpm.conf]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm::Config/File[/etc/php5/fpm/php-fpm.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Fpm::Config/Php::Config[fpm]/Php::Config::Setting[/etc/php5/fpm/php.ini: Date/date.timezone]/Ini_setting[/etc/php5/fpm/php.ini: Date/date.timezone]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm::Config/Php::Config[fpm]/Php::Config::Setting[/etc/php5/fpm/php.ini: Date/date.timezone]/Ini_setting[/etc/php5/fpm/php.ini: Date/date.timezone]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm::Config/Php::Config[fpm]/Php::Config::Setting[/etc/php5/fpm/php.ini: Date/date.timezone]/Ini_setting[/etc/php5/fpm/php.ini: Date/date.timezone]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Fpm::Service/File[/etc/init/php5-fpm.override]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm::Service/File[/etc/init/php5-fpm.override]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm::Service/File[/etc/init/php5-fpm.override]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Cli/Php::Config[cli]/Php::Config::Setting[/etc/php5/cli/php.ini: Date/date.timezone]/Ini_setting[/etc/php5/cli/php.ini: Date/date.timezone]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Cli/Php::Config[cli]/Php::Config::Setting[/etc/php5/cli/php.ini: Date/date.timezone]/Ini_setting[/etc/php5/cli/php.ini: Date/date.timezone]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Cli/Php::Config[cli]/Php::Config::Setting[/etc/php5/cli/php.ini: Date/date.timezone]/Ini_setting[/etc/php5/cli/php.ini: Date/date.timezone]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Composer/Exec[download composer]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Composer/Exec[download composer]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Composer/Exec[download composer]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Pear/Package[php-pear]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Pear/Package[php-pear]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Pear/Package[php-pear]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Composer/File[/usr/local/bin/composer]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Composer/File[/usr/local/bin/composer]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Composer/File[/usr/local/bin/composer]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Composer::Auto_update/Exec[update composer]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Composer::Auto_update/Exec[update composer]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Composer::Auto_update/Exec[update composer]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[gd]/Package[php5-gd]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[gd]/Package[php5-gd]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[gd]/Package[php5-gd]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[curl]/Package[php5-curl]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[curl]/Package[php5-curl]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[curl]/Package[php5-curl]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[mysql]/Package[php5-mysql]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[mysql]/Package[php5-mysql]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[mysql]/Package[php5-mysql]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[mysql]/Exec[/usr/sbin/php5enmod mysql]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[mysql]/Exec[/usr/sbin/php5enmod mysql]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[mysql]/Exec[/usr/sbin/php5enmod mysql]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[curl]/Exec[/usr/sbin/php5enmod curl]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[curl]/Exec[/usr/sbin/php5enmod curl]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[curl]/Exec[/usr/sbin/php5enmod curl]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[gd]/Exec[/usr/sbin/php5enmod gd]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[gd]/Exec[/usr/sbin/php5enmod gd]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[gd]/Exec[/usr/sbin/php5enmod gd]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Pear/Exec[::php::pear::auto_discover]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Pear/Exec[::php::pear::auto_discover]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Pear/Exec[::php::pear::auto_discover]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[tidy]/Package[php5-tidy]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[tidy]/Package[php5-tidy]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[tidy]/Package[php5-tidy]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Php::Extension[tidy]/Exec[/usr/sbin/php5enmod tidy]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Php::Extension[tidy]/Exec[/usr/sbin/php5enmod tidy]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Php::Extension[tidy]/Exec[/usr/sbin/php5enmod tidy]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Fpm::Service/Service[php5-fpm]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm::Service/Service[php5-fpm]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm::Service/Service[php5-fpm]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Fpm/Anchor[::php::fpm::end]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Fpm/Anchor[::php::fpm::end]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Fpm/Anchor[::php::fpm::end]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php::Dev/Package[php5-dev]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php::Dev/Package[php5-dev]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php::Dev/Package[php5-dev]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Php/Anchor[php::end]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Php/Anchor[php::end]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Php/Anchor[php::end]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/File[/opt/silverstripe/project]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/File[/opt/silverstripe/project]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/File[/opt/silverstripe/project]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments.concat.out]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments.concat.out]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments.concat.out]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments.concat]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments.concat]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments.concat]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-custom_fragment]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/270_127.0.0.1-custom_fragment]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-custom_fragment]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/270_127.0.0.1-custom_fragment]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-custom_fragment]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/270_127.0.0.1-custom_fragment]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-file_footer]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/999_127.0.0.1-file_footer]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-file_footer]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/999_127.0.0.1-file_footer]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-file_footer]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/999_127.0.0.1-file_footer]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-docroot]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/10_127.0.0.1-docroot]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-docroot]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/10_127.0.0.1-docroot]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-docroot]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/10_127.0.0.1-docroot]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-apache-header]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/0_127.0.0.1-apache-header]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-apache-header]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/0_127.0.0.1-apache-header]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-apache-header]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/0_127.0.0.1-apache-header]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-directories]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/60_127.0.0.1-directories]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-directories]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/60_127.0.0.1-directories]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-directories]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/60_127.0.0.1-directories]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-logging]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/80_127.0.0.1-logging]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-logging]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/80_127.0.0.1-logging]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-logging]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/80_127.0.0.1-logging]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-serversignature]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/90_127.0.0.1-serversignature]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-serversignature]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/90_127.0.0.1-serversignature]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-serversignature]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/90_127.0.0.1-serversignature]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-access_log]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/100_127.0.0.1-access_log]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-access_log]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/100_127.0.0.1-access_log]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat::Fragment[127.0.0.1-access_log]/File[/var/lib/puppet/concat/25-127.0.0.1.conf/fragments/100_127.0.0.1-access_log]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/Exec[concat_25-127.0.0.1.conf]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/Exec[concat_25-127.0.0.1.conf]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/Exec[concat_25-127.0.0.1.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[25-127.0.0.1.conf]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[25-127.0.0.1.conf]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/Concat[25-127.0.0.1.conf]/File[25-127.0.0.1.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/File[25-127.0.0.1.conf symlink]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/File[25-127.0.0.1.conf symlink]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Main/Apache::Vhost[127.0.0.1]/File[25-127.0.0.1.conf symlink]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-enabled]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-enabled]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/mpm_event.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/mpm_event.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/status.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/status.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/status.conf]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/status.conf]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/mpm_event.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-enabled/mpm_event.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache/File[/etc/apache2/mods-available/log_debug.load]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache/File[/etc/apache2/mods-available/log_debug.load]: Skipping because of failed dependencies[0m
+[mNotice: /Stage[main]/Apache::Service/Service[httpd]: Dependency Package[libapache2-mod-fastcgi] has failures: true[0m
+[mNotice: /Stage[main]/Apache::Service/Service[httpd]: Dependency Package[php5-cli] has failures: true[0m
+[mNotice: /Stage[main]/Apache::Service/Service[httpd]: Dependency Package[php5-common] has failures: true[0m
+[1;31mWarning: /Stage[main]/Apache::Service/Service[httpd]: Skipping because of failed dependencies[0m
+[mNotice: Finished catalog run in 10.23 seconds[0m
